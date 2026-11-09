@@ -2,15 +2,19 @@
 // return  `{$this.name} ({$this.number} , {$this.number}))` ;
 // }
 // console.log(formatCoordinate([23.81, 90.41, "Dhaka"]));
-const formatCoordinate = (
-    locationName: string,
-    latitude: number,
-    longitude: number,
-): readonly [number, number, string] => {
-    return `Location: ${locationName} (${latitude}, ${longitude})`;
-}
 
-console.log(formatCoordinate("Dhaka",23.81, 90.41, ));
+
+// const formatCoordinate = (
+//     [locationName: string,
+//     latitude: number,
+//     longitude: number]
+// ): readonly [number, number, string] => {
+//     return `Location: ${locationName} (${latitude}, ${longitude})`;
+// }
+
+
+
+// console.log(formatCoordinate("Dhaka",23.81, 90.41, ));
 
 // const formatCoordinate = (
 //     latitude: number,
@@ -21,3 +25,16 @@ console.log(formatCoordinate("Dhaka",23.81, 90.41, ));
 // };
 
 // console.log(formatCoordinate(23.81, 90.41, "Dhaka"));
+
+const formatCoordinate = (
+    coordinate: readonly [ number, number, string]
+): string => {
+
+    const [latitude, longitude,locationName] = coordinate;
+
+    return `Location: ${locationName} (${latitude}, ${longitude})`;
+};
+
+console.log(formatCoordinate([ 23.81, 90.41,"Dhaka"]));
+
+// coordinate.push(12.5)
